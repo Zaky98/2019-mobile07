@@ -45,5 +45,5 @@
         android:background="@null"
         android:text="@string/skip"
         android:textColor="@android:color/white" />
-    
+
 </RelativeLayout>

@@ -26,9 +26,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
     }
 
+//    private void loadFragment(FoodFragment foodFragment) {
+//    }
+
     private boolean loadFragment(Fragment fragment) {
         if (fragment != null) {
-            getSupportFragmentManager().beginTransaction()
+            getSupportFragmentManager()
+                    .beginTransaction()
                     .replace(R.id.fragment_container, fragment)
                     .addToBackStack(null)
                     .commit();
@@ -51,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 fragment = new DiscountFragment();
                 break;
         }
+
         return loadFragment(fragment);
     }
 

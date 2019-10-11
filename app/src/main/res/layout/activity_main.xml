@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         android:background="@color/dot_light_screen1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu=""
+        app:menu="@menu/navigation"
         />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

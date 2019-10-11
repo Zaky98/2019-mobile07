@@ -18,13 +18,17 @@ import android.widget.TextView;
 import polinema.ac.id.androiduistarter.R;
 
 public class WelcomeActivity extends AppCompatActivity {
-
     private ViewPager viewPager;
     private MyViewPagerAdapter myViewPagerAdapter;
     private LinearLayout dotsLayout;
     private TextView[] dots;
     private int[] layouts;
     private Button btnSkip, btnNext;
+
+    private void launchHomeScreen() {
+        startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,11 +98,6 @@ public class WelcomeActivity extends AppCompatActivity {
         return viewPager.getCurrentItem() + i;
     }
 
-    private void launchHomeScreen() {
-        startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
-        finish();
-    }
-
     //  viewpager change listener
     ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
 
@@ -157,6 +156,7 @@ public class WelcomeActivity extends AppCompatActivity {
         public boolean isViewFromObject(View view, Object obj) {
             return view == obj;
         }
+
 
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
